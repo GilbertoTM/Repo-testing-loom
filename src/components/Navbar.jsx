@@ -29,9 +29,9 @@ const Navbar = () => {
 
                     {/* CTA Button */}
                     <div className="hidden md:block">
-                        <button className="bg-loom-green-500 hover:bg-loom-green-400 text-loom-black-900 font-semibold py-2 px-4 rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(0,255,148,0.2)] hover:shadow-[0_0_20px_rgba(0,255,148,0.4)]">
-                            Get Started
-                        </button>
+                        <Link to="/login" className="bg-loom-green-500 hover:bg-loom-green-400 text-loom-black-900 font-semibold py-2 px-4 rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(0,255,148,0.2)] hover:shadow-[0_0_20px_rgba(0,255,148,0.4)]">
+                            Sign In
+                        </Link>
                     </div>
                 </div>
             </div>

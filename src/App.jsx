@@ -5,29 +5,31 @@ import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-loom-black-900 text-loom-gray-100 font-sans selection:bg-loom-green-500 selection:text-loom-black-900 flex flex-col">
-        <Navbar />
+      <Routes>
+        {/* Public Landing Page Layout */}
+        <Route path="/" element={
+          <div className="min-h-screen bg-loom-black-900 text-loom-gray-100 font-sans selection:bg-loom-green-500 selection:text-loom-black-900 flex flex-col">
+            <Navbar />
+            <main className="flex-grow">
+              <Hero />
+              <Features />
+              <Testimonials />
+              <Pricing />
+            </main>
+            <Footer />
+          </div>
+        } />
 
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={
-              <>
-                <Hero />
-                <Features />
-                <Testimonials />
-                <Pricing />
-              </>
-            } />
-            {/* Add more routes here later */}
-          </Routes>
-        </main>
-
-        <Footer />
-      </div>
+        {/* Auth Routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </Router>
   )
 }
