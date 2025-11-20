@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
               <>
                 <Hero />
                 <Features />
+                <Pricing />
               </>
             } />
             {/* Add more routes here later */}
