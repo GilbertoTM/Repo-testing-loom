@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Features from './components/Features';
 import Footer from './components/Footer';
 
 function App() {
@@ -11,7 +12,12 @@ function App() {
 
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Hero />} />
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Features />
+              </>
+            } />
             {/* Add more routes here later */}
           </Routes>
         </main>

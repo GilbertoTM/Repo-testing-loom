@@ -12,7 +12,7 @@ const Navbar = () => {
                                 T
                             </div>
                             <span className="text-xl font-bold text-loom-gray-100 tracking-tight">
-                                Testing<span className="text-loom-green-500">Loom</span>
+                                Loom<span className="text-loom-green-500">ix</span>
                             </span>
                         </Link>
                     </div>

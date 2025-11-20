@@ -1,0 +1,64 @@
+const Features = () => {
+    const features = [
+        {
+            title: "AI-Powered Analysis",
+            description: "Our advanced LLMs understand context, not just syntax. Catch logic errors that traditional linters miss.",
+            icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            )
+        },
+        {
+            title: "Instant Feedback",
+            description: "Get code reviews in seconds, not hours. Integrate directly into your PR workflow on GitHub or GitLab.",
+            icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            )
+        },
+        {
+            title: "Security First",
+            description: "Automatically detect vulnerabilities, secrets, and compliance issues before they reach production.",
+            icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            )
+        }
+    ];
+
+    return (
+        <section className="py-24 bg-loom-black-900 relative overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-loom-green-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-loom-gray-100 mb-4">
+                        Why Developers Choose <span className="text-loom-green-500">Loomix</span>
+                    </h2>
+                    <p className="text-loom-gray-400 max-w-2xl mx-auto text-lg">
+                        Stop wasting time on manual reviews. Let our intelligent engine handle the heavy lifting while you focus on shipping features.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="p-8 rounded-2xl bg-loom-black-800 border border-loom-gray-800 hover:border-loom-green-500/50 transition-all duration-300 hover:-translate-y-1 group"
+                        >
+                            <div className="w-12 h-12 bg-loom-black-900 rounded-lg border border-loom-gray-700 flex items-center justify-center text-loom-green-500 mb-6 group-hover:shadow-[0_0_15px_rgba(0,255,148,0.2)] transition-shadow">
+                                {feature.icon}
+                            </div>
+                            <h3 className="text-xl font-bold text-loom-gray-100 mb-3 group-hover:text-loom-green-400 transition-colors">
+                                {feature.title}
+                            </h3>
+                            <p className="text-loom-gray-400 leading-relaxed">
+                                {feature.description}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Features;
