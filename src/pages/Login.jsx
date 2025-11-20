@@ -22,8 +22,9 @@ const Login = () => {
         <div className="min-h-screen flex items-center justify-center bg-loom-black-900 relative overflow-hidden px-4">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-loom-green-900/20 rounded-full blur-[120px]"></div>
-                <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-loom-green-500/10 rounded-full blur-[120px]"></div>
+                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-loom-green-900/20 rounded-full blur-[120px] animate-blob"></div>
+                <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-loom-green-500/10 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
+                <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] bg-purple-500/10 rounded-full blur-[100px] animate-blob animation-delay-4000"></div>
             </div>
 
             <div className="w-full max-w-md bg-loom-black-800 border border-loom-gray-800 rounded-2xl p-8 shadow-2xl relative z-10 backdrop-blur-sm">
@@ -86,6 +87,10 @@ const Login = () => {
                         <button className="flex items-center justify-center gap-2 px-4 py-2 bg-loom-black-900 border border-loom-gray-700 rounded-lg text-loom-gray-300 hover:text-loom-gray-100 hover:border-loom-gray-500 transition-colors">
                             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .533 5.333.533 12S5.867 24 12.48 24c3.44 0 6.013-1.133 8.053-3.24 2.08-2.08 2.72-5.2 2.72-7.707 0-.507-.053-1.04-.147-1.493h-10.627z" /></svg>
                             Google
+                        </button>
+                        <button className="col-span-2 flex items-center justify-center gap-2 px-4 py-2 bg-loom-black-900 border border-loom-gray-700 rounded-lg text-loom-gray-300 hover:text-loom-gray-100 hover:border-loom-gray-500 transition-colors">
+                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036c-2.148 0-2.797 1.657-2.797 3.593v.38h5.374l-.575 3.667h-4.799v7.98c0 .033 0 .065.006.099a12.028 12.028 0 0 0 4.326-4.9 12.026 12.026 0 0 0 1.567-6.078c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.668-.006-.033-.01-.066-.01-.1z" /></svg>
+                            Facebook
                         </button>
                     </div>
                 </div>

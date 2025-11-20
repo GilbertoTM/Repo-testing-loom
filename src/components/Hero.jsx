@@ -4,9 +4,10 @@ const Hero = () => {
     return (
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-loom-green-500/20 rounded-full blur-[100px]"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-loom-green-900/30 rounded-full blur-[120px]"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-0 left-1/4 w-72 h-72 bg-loom-green-500/30 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob"></div>
+                <div className="absolute top-0 right-1/4 w-72 h-72 bg-purple-500/30 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob animation-delay-2000"></div>
+                <div className="absolute -bottom-32 left-1/3 w-72 h-72 bg-loom-green-900/30 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob animation-delay-4000"></div>
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
