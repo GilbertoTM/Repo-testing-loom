@@ -22,9 +22,9 @@ const Login = () => {
         <div className="min-h-screen flex items-center justify-center bg-loom-black-900 relative overflow-hidden px-4">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-loom-green-900/20 rounded-full blur-[120px] animate-blob"></div>
-                <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-loom-green-500/10 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
-                <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] bg-purple-500/10 rounded-full blur-[100px] animate-blob animation-delay-4000"></div>
+                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-loom-gray-700/10 rounded-full blur-[120px] animate-blob"></div>
+                <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-loom-gray-500/10 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
+                <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] bg-loom-gray-400/10 rounded-full blur-[100px] animate-blob animation-delay-4000"></div>
             </div>
 
             <div className="w-full max-w-md bg-loom-black-800 border border-loom-gray-800 rounded-2xl p-8 shadow-2xl relative z-10 backdrop-blur-sm">
