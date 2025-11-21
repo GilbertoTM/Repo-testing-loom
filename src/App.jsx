@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import VIPUsers from './components/VIPUsers';
 import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
@@ -18,6 +19,7 @@ function App() {
             <Navbar />
             <main className="flex-grow">
               <Hero />
+              <VIPUsers />
               <Features />
               <Testimonials />
               <Pricing />
