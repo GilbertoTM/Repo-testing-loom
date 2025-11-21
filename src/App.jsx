@@ -5,6 +5,7 @@ import VIPUsers from './components/VIPUsers';
 import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
+import FreeTier from './components/FreeTier';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -23,6 +24,7 @@ function App() {
               <Features />
               <Testimonials />
               <Pricing />
+              <FreeTier />
             </main>
             <Footer />
           </div>
