@@ -1,8 +1,10 @@
+```javascript
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustedCompanies from './components/TrustedCompanies';
 import Features from './components/Features';
+import DemoSection from './components/DemoSection';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FreeTier from './components/FreeTier';
@@ -22,6 +24,7 @@ function App() {
               <Hero />
               <TrustedCompanies />
               <Features />
+              <DemoSection />
               <Testimonials />
               <Pricing />
               <FreeTier />
