@@ -5,6 +5,7 @@ import TrustedCompanies from './components/TrustedCompanies';
 import Features from './components/Features';
 import DemoSection from './components/DemoSection';
 import Roadmap from './components/Roadmap';
+import UnsupportedFeatures from './components/UnsupportedFeatures';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FreeTier from './components/FreeTier';
@@ -26,6 +27,7 @@ function App() {
               <Features />
               <DemoSection />
               <Roadmap />
+              <UnsupportedFeatures />
               <Testimonials />
               <Pricing />
               <FreeTier />
