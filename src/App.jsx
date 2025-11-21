@@ -6,6 +6,7 @@ import Features from './components/Features';
 import DemoSection from './components/DemoSection';
 import Roadmap from './components/Roadmap';
 import UnsupportedFeatures from './components/UnsupportedFeatures';
+import FamousClients from './components/FamousClients';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FreeTier from './components/FreeTier';
@@ -28,6 +29,7 @@ function App() {
               <DemoSection />
               <Roadmap />
               <UnsupportedFeatures />
+              <FamousClients />
               <Testimonials />
               <Pricing />
               <FreeTier />

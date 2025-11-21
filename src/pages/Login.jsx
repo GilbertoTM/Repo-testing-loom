@@ -88,9 +88,13 @@ const Login = () => {
                             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .533 5.333.533 12S5.867 24 12.48 24c3.44 0 6.013-1.133 8.053-3.24 2.08-2.08 2.72-5.2 2.72-7.707 0-.507-.053-1.04-.147-1.493h-10.627z" /></svg>
                             Google
                         </button>
-                        <button className="col-span-2 flex items-center justify-center gap-2 px-4 py-2 bg-loom-black-900 border border-loom-gray-700 rounded-lg text-loom-gray-300 hover:text-loom-gray-100 hover:border-loom-gray-500 transition-colors">
+                        <button className="flex items-center justify-center gap-2 px-4 py-2 bg-loom-black-900 border border-loom-gray-700 rounded-lg text-loom-gray-300 hover:text-loom-gray-100 hover:border-loom-gray-500 transition-colors">
                             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036c-2.148 0-2.797 1.657-2.797 3.593v.38h5.374l-.575 3.667h-4.799v7.98c0 .033 0 .065.006.099a12.028 12.028 0 0 0 4.326-4.9 12.026 12.026 0 0 0 1.567-6.078c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.668-.006-.033-.01-.066-.01-.1z" /></svg>
                             Facebook
+                        </button>
+                        <button className="flex items-center justify-center gap-2 px-4 py-2 bg-loom-black-900 border border-loom-gray-700 rounded-lg text-loom-gray-300 hover:text-loom-gray-100 hover:border-loom-gray-500 transition-colors">
+                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" /></svg>
+                            Google Cloud
                         </button>
                     </div>
                 </div>
