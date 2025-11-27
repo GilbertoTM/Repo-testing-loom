@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import AboutUs from './components/AboutUs';
 import FAQ from './components/FAQ';
 import Blog from './components/Blog';
+import CTA from './components/CTA';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 
