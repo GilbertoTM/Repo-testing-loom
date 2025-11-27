@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FreeTier from './components/FreeTier';
 import Footer from './components/Footer';
+import AboutUs from './components/AboutUs';
 import FAQ from './components/FAQ';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -25,6 +26,7 @@ function App() {
             <Navbar />
             <main className="flex-grow">
               <Hero />
+              <AboutUs />
               <TrustedCompanies />
               <Features />
               <DemoSection />
