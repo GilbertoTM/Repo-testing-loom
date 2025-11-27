@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FreeTier from './components/FreeTier';
 import Footer from './components/Footer';
+import FAQ from './components/FAQ';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 
@@ -33,6 +34,7 @@ function App() {
               <Testimonials />
               <Pricing />
               <FreeTier />
+              <FAQ />
             </main>
             <Footer />
           </div>
