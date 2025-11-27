@@ -15,6 +15,7 @@ import AboutUs from './components/AboutUs';
 import FAQ from './components/FAQ';
 import Blog from './components/Blog';
 import CTA from './components/CTA';
+import Subscribe from './components/Subscribe';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 
@@ -41,6 +42,7 @@ function App() {
               <FAQ />
               <Blog />
             </main>
+            <Subscribe />
             <Footer />
           </div>
         } />
