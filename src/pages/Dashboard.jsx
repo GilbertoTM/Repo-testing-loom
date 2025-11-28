@@ -1,6 +1,43 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
+    const [scans, setScans] = useState([
+        { id: 1, repo: "frontend-app", branch: "main", status: "Passed", time: "2m ago" },
+        { id: 2, repo: "backend-api", branch: "feat/auth", status: "Failed", time: "15m ago" },
+        { id: 3, repo: "mobile-ios", branch: "dev", status: "Passed", time: "1h ago" },
+        { id: 4, repo: "landing-page", branch: "main", status: "Passed", time: "3h ago" },
+    ]);
+
+    const handleAddRepo = () => {
+        const repoName = prompt("Enter repository name (e.g., my-org/new-repo):");
+        if (repoName) {
+            const newScan = {
+                id: Date.now(),
+                repo: repoName,
+                branch: "main",
+                status: "Pending",
+                time: "Just now"
+            };
+            setScans([newScan, ...scans]);
+            // Auto-start scan
+            setTimeout(() => runScan(newScan.id), 500);
+        }
+    };
+
+    const runScan = (id) => {
+        setScans(prev => prev.map(scan =>
+            scan.id === id ? { ...scan, status: "Scanning..." } : scan
+        ));
+
+        setTimeout(() => {
+            const randomStatus = Math.random() > 0.3 ? "Passed" : "Failed";
+            setScans(prev => prev.map(scan =>
+                scan.id === id ? { ...scan, status: randomStatus, time: "Just now" } : scan
+            ));
+        }, 3000);
+    };
+
     return (
         <div className="min-h-screen bg-loom-black-900 flex">
             {/* Sidebar */}
@@ -38,7 +75,10 @@ const Dashboard = () => {
             <div className="flex-1 flex flex-col overflow-hidden">
                 <header className="h-16 border-b border-loom-gray-800 flex items-center justify-between px-8 bg-loom-black-900/50 backdrop-blur-sm">
                     <h1 className="text-xl font-bold text-loom-gray-100">Dashboard</h1>
-                    <button className="px-4 py-2 bg-loom-green-500 hover:bg-loom-green-400 text-loom-black-900 rounded-lg font-semibold text-sm transition-colors">
+                    <button
+                        onClick={handleAddRepo}
+                        className="px-4 py-2 bg-loom-green-500 hover:bg-loom-green-400 text-loom-black-900 rounded-lg font-semibold text-sm transition-colors"
+                    >
                         + Add Repository
                     </button>
                 </header>
@@ -46,7 +86,7 @@ const Dashboard = () => {
                 <main className="flex-1 overflow-y-auto p-8">
                     {/* Stats Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <StatCard title="Total Scans" value="1,284" change="+12%" />
+                        <StatCard title="Total Scans" value={scans.length.toString()} change="+12%" />
                         <StatCard title="Issues Found" value="42" change="-5%" positive />
                         <StatCard title="Time Saved" value="142h" change="+8%" />
                     </div>
@@ -57,10 +97,13 @@ const Dashboard = () => {
                             <h3 className="font-semibold text-loom-gray-100">Recent Scans</h3>
                         </div>
                         <div className="divide-y divide-loom-gray-800">
-                            <ActivityRow repo="frontend-app" branch="main" status="Passed" time="2m ago" />
-                            <ActivityRow repo="backend-api" branch="feat/auth" status="Failed" time="15m ago" />
-                            <ActivityRow repo="mobile-ios" branch="dev" status="Passed" time="1h ago" />
-                            <ActivityRow repo="landing-page" branch="main" status="Passed" time="3h ago" />
+                            {scans.map(scan => (
+                                <ActivityRow
+                                    key={scan.id}
+                                    {...scan}
+                                    onRunScan={() => runScan(scan.id)}
+                                />
+                            ))}
                         </div>
                     </div>
                 </main>
@@ -88,20 +131,30 @@ const StatCard = ({ title, value, change, positive }) => (
     </div>
 );
 
-const ActivityRow = ({ repo, branch, status, time }) => (
-    <div className="px-6 py-4 flex items-center justify-between hover:bg-loom-black-900/50 transition-colors">
+const ActivityRow = ({ repo, branch, status, time, onRunScan }) => (
+    <div className="px-6 py-4 flex items-center justify-between hover:bg-loom-black-900/50 transition-colors group">
         <div className="flex items-center gap-4">
-            <div className={`w-2 h-2 rounded-full ${status === 'Passed' ? 'bg-loom-green-500' : 'bg-red-500'}`}></div>
+            <div className={`w-2 h-2 rounded-full ${status === 'Passed' ? 'bg-loom-green-500' : status === 'Failed' ? 'bg-red-500' : 'bg-yellow-500 animate-pulse'}`}></div>
             <div>
                 <p className="text-sm font-medium text-loom-gray-100">{repo}</p>
                 <p className="text-xs text-loom-gray-500">{branch}</p>
             </div>
         </div>
         <div className="flex items-center gap-6">
-            <span className={`px-2 py-1 rounded text-xs font-medium ${status === 'Passed' ? 'bg-loom-green-900/30 text-loom-green-500' : 'bg-red-900/30 text-red-500'}`}>
+            <span className={`px-2 py-1 rounded text-xs font-medium ${status === 'Passed' ? 'bg-loom-green-900/30 text-loom-green-500' :
+                    status === 'Failed' ? 'bg-red-900/30 text-red-500' :
+                        'bg-yellow-900/30 text-yellow-500'
+                }`}>
                 {status}
             </span>
-            <span className="text-sm text-loom-gray-500">{time}</span>
+            <span className="text-sm text-loom-gray-500 w-16 text-right">{time}</span>
+            <button
+                onClick={onRunScan}
+                className="opacity-0 group-hover:opacity-100 p-2 text-loom-gray-400 hover:text-loom-green-500 transition-all"
+                title="Run Scan"
+            >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </button>
         </div>
     </div>
 );

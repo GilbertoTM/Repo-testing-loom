@@ -5,6 +5,7 @@ import TrustedCompanies from './components/TrustedCompanies';
 import Features from './components/Features';
 import DemoSection from './components/DemoSection';
 import Roadmap from './components/Roadmap';
+import UpcomingFeatures from './components/UpcomingFeatures';
 import UnsupportedFeatures from './components/UnsupportedFeatures';
 import FamousClients from './components/FamousClients';
 import Testimonials from './components/Testimonials';
@@ -19,6 +20,7 @@ import Subscribe from './components/Subscribe';
 import Stats from './components/Stats';
 import VideoDemo from './components/VideoDemo';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 
 function App() {
@@ -35,6 +37,7 @@ function App() {
               <TrustedCompanies />
               <Features />
               <DemoSection />
+              <UpcomingFeatures />
               <Roadmap />
               <UnsupportedFeatures />
               <FamousClients />
@@ -53,6 +56,8 @@ function App() {
 
         {/* Auth Routes */}
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/demo" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
